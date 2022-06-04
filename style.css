@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*game板塊的特性設定*/
+#game{
+    width: 400px;
+    height: 500px;
+    border:1px solid black;
+    margin: auto;
+    overflow: hidden; /*超出邊界的東西就隱藏起來*/
+}
+/*block板塊的特性設定*/
+#block{
+    width:50px;
+    height:500px;
+    background-color: black;
+    position: relative;
+    left: 400px;
+    animation: block 2s infinite linear; /*設定動畫時間 還有持續循環*/
+}
+
+/*keyframe關鍵影格 css的動畫設定*/
+@keyframes block{
+    0%{left: 400px}
+    100%{left: -50px} /*從距離左邊400px位置出現 移動至距離左邊-50px的位置（在框框外面了）*/
+}
+#hole{
+    width: 50px; 
+    height: 150px;
+    background-color: white;
+    position: relative;
+    left: 400px;
+    top: -170px; /*定義 定位元素的頂部邊緣 hole出現的位置*/
+    /*top:0 頂部在最底端  top:-500 頂部在最上面*/
+    animation: block 2s infinite linear; /*設定動畫時間 還有持續循環*/
+}
+
+#character{
+    width: 20px;
+    height:20px;
+    background-color: red;
+    position: absolute; /*absolute不會為了這個元素預留空間 換言之他可以穿透*/
+    top: 100px;
+    border-radius: 50%; /*使用一個半徑確定的圓形時，允許設置元素的外邊框圓角 */
+    
+}
